@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mytools/constants/colors_defaults.dart';
-import 'package:mytools/widgets/backgound_screen.dart';
-import 'package:mytools/modules/welcome/widgets/welcome_text.dart';
+import '../../../constants/colors_defaults.dart';
+import '../widgets/welcome_text.dart';
+import '../../../widgets/backgound_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
