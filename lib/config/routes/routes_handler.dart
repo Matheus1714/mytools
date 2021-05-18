@@ -1,5 +1,6 @@
-import 'package:mytools/modules/welcome/screens/welcome_screen.dart';
-import 'package:mytools/modules/protocol_error/screen/route_not_found_screen.dart';
+import '../../modules/welcome/screens/welcome_screen.dart';
+import '../../modules/protocol_error/screen/route_not_found_screen.dart';
+import '../../modules/dashboard/screens/list_tools.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,7 +14,17 @@ class AppRoutes {
       '/',
       Handler(
         handlerFunc: (context, parameters) => WelcomeScreen(),
-      ));
+      ),
+    );
+  static final dashboard = AppRoute(
+    '/dashboard',
+    Handler(
+      handlerFunc: (context, parameters) => ListTools(),
+    ),
+  );
 
-  static final List<AppRoute> routes = [rootRoute];
+  static final List<AppRoute> routes = [
+    rootRoute,
+    dashboard
+  ];
 }
