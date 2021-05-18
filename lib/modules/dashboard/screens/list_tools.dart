@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/backgound_screen.dart';
 import '../../../constants/colors_defaults.dart';
-import '../widgets/card_tools.dart';
 import '../../../utils/helper/get_grid_type_card.dart';
 import '../../../utils/helper/adjust_icon_dimension.dart';
+import '../widgets/card_layout.dart';
 
 class ListTools extends StatefulWidget {
   @override
@@ -43,18 +42,23 @@ class _ListToolsState extends State<ListTools> {
     setGridType(_widthScreen, _heightScreen);
     setSizeIcon(_widthScreen, _heightScreen);
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text('MyTools'),
+        centerTitle: true,
+      ),
       body: Container(
-        decoration: backgroundScreen(
-            DefaultColors.whiteColor, DefaultColors.secondaryVioletColor),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              cardTools(_widthScreen, _heightScreen, _gridType, _sizeIcon),
-              cardTools(_widthScreen, _heightScreen, _gridType, _sizeIcon),
-            ],
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //     gradient: LinearGradient(
+        //       begin: Alignment.topCenter,
+        //       end: Alignment.bottomCenter,
+        //       colors: <Color>[
+        //         DefaultColors.whiteColor,
+        //         DefaultColors.secondaryVioletColor
+        //       ]
+        //     ),
+        //   ),
+        child: cardLayout(_widthScreen, _heightScreen, _gridType, _sizeIcon),
       ),
     );
   }
